@@ -1,0 +1,224 @@
+\documentclass[12pt]{pdfathesis}
+%%%% Of course, if you want to format you entire thesis
+%%%% you can use another document class. In such a case
+%%%% you need to use the `\usepackage{pdfathesis}' command
+%%%% instead. ie, replace the comand before and uncommnent
+%%%% the following line
+%\usepackage{pdfathesis}
+%
+%%%% Include all extra packages that you need, as in this example
+%\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[section]{placeins}
+\usepackage{lipsum} %% of course, you do not need this one
+%% the next line include the MinonPro fonts for pdfLaTeX; 
+%% you may not have them or not need them.
+% \ifpdf\usepackage{MinionPro}\pdfmapfile{+MinionPro.map}\fi 
+%% Do not include unnecesary packages (inlusion of packages 
+%% that you no use just makes documents hard to debug)
+%\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{relsize}
+\usepackage{exscale}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{relsize}
+%\usetikzlibrary{arrows,backgrounds}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage{textcomp}
+\RequirePackage{amsmath,amssymb}
+\bibliographystyle{unsrt}
+%\usefonttheme{professionalfonts}
+%
+%
+%%%%%%%%%%%%%%%% thesispdfa definitions
+%%%%
+%%%%
+%% '\Title{}' and '\Author{}' are mandatory
+%% while '\title' and '\author' are optional
+%
+\Title{Fluctuation Diagnostics in the 2D Hubbard model from the dual-fermion method} %% it shall not include LaTeX macros
+\Author{Behnam Arzhang}        %% ibidem
+%
+%%   If '\title' and '\author' are not defined the front page will
+%%   be composed with the values of '\Title' and '\Author'
+%
+%\title{Title as used in front page} % it may include LaTeX macros
+%\author{Name as used in fronpage}   % ibidem
+%
+\DocumentType{thesis}      % for research based degrees
+%\DocumentType{practicum}   % for MAS programme
+%\DocumentType{project}     % for Maths course based programme
+%\DocumentType{dissertation}
+%
+\University{Memorial University}
+\AcademicUnit{Department of PHYSICS AND PHYSICAL OCEANOGRAPHY}
+%
+\Degree{Master of Physics}
+%\Degree{Master of Science}
+%\Degree{Master of Applied Statistics}
+%\Degree{Master of Arts}
+%\Degree{Master of Business Administration}
+%
+%% Please, no too many keywords, it looks ugly. 
+%% Use `\sep' as keyword separator
+\Keywords{first keyword\sep second keyword\sep last keyword} 
+%
+\Subject{MSC-xxxx subject descriptor}
+%
+%\DateSubmitted{}    % default: current month and year
+%\ConvocationYear{}  % default: the nearest coming convocation year
+%
+\Supervisor{Dr. James LeBlanc}    % default: undefined
+%\Cosupervisor{Name}  % default: undefined
+%%
+\GradSchool{School of Graduate Studies}
+\UniversityLogo{MUNLogoRGB} %% MUNLogoRGB.png is the file with university logo
+\UniversityAddress{St. John's, \ Newfoundland and Labrador, \ Canada}
+%
+%% If you do not know what a colorspace profile is, leave next macro alone
+%\ColorspaceProfile{file}{profile description}{number of components}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%   additional preamble definitions
+%%%%
+\def\dnor#1#2{{N}\!\!\left(#1,\,#2\right)}
+\def\real#1{{R}^{#1}}
+
+
+
+
+
+\setlength{\parskip}{6pt}
+%%%%%%%%%%%%%%%%
+\begin{document}
+%%%% If you used '\documentclass[12pt]{pdfathesisi}', then 
+%%%% the 'prefatory' enviromment is defined as well as some 
+%%%% useful macros to be used whitin the environment.
+%%%% Otherwise you are by your own regarding the  formating 
+%%%% of your thesis.
+%%
+%% prefatory pages: front page, abstract, etc.
+%%
+\begin{prefatory}
+\frontpage
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Abstract is mandatory
+%%   It should not exceed 300 words
+\abstract% 
+In this thesis, we use the Dual Fermion approximation (DF) to study the Hubbard model on the 2D square lattice by using two-particle quantities such as susceptibilities and full vertex functions. 
+
+In the first chapter we give an introduction to the strongly correlated systems including their definitions and features. Then, in the next chapter, to solve our model we present some numerical methods.  The numerical methods that we used for our study are the dynamical mean-field theory  (DMFT), the continuous-time auxiliary field impurity solver (CTAUX), Fluctuation diagnostics and Dual Fermion approximation (DF). The DF method provides high-resolution results for single-particle quantities such as the density of states (DOS) and Self Energy as well two particles spin susceptibility and vertex functions. With these results, we can present high-resolution results of the fluctuation diagnostics method with minimal computational expense. We examine the full Q-vector dependence of the extended self-energy at the Nodal and Antinodal k-points and provide interpretation for the claim that spin fluctuations are responsible for the observed metal-to-insulator behaviour. 
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Dedication page is optional
+%%   Remove it if you do not want to have it
+%%\dedication%
+%{\flushright
+%To whom you what to dedicate this work\\
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%
+%\laysummary %
+%Lay summary is a short account of research targeted at a general
+%audience, i.e., its goal is to communicate the research results to a
+
+
+%%
+%%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Acknowledgements
+%%   It can be in singular on in plural
+%\acknowledgement%
+% or
+%\acknowledgements%
+%Among other acknowledgements, the student should declare the
+
+
+%\noindent
+%In addition, it is appropriate to recognize the supervision and advice
+
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   Statement of contributions
+%%   It can be in singular on in plural
+%\contributions%
+%\contribution%
+%There must be an explicit statement describing the contributions of all
+%parties, including the student and supervisor(s).\\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents%
+%\listoftables    % if apply, otherwise comment
+\listoffigures   % if apply, otherwise comment
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   List of symbos is optional
+%%   It is like a two column tabular environment
+\begin{symbols}
+$\Sigma$ & %
+    Self-energy\\
+$\chi$ & susceptibility \\
+$\xi$ & Correlation length \\
+$G$ & Green's function\\
+$F$ & Vertex function\\
+\end{symbols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   List of abbreviations is optional
+%%   Also, it is like a two column tabular environment
+\begin{abbreviations}
+DMFT & Dynamical Mean Field Theory \\
+DF & Dual Fermions\\
+DOS & Density of State\\
+N & Nodal points\\
+AN & Anti- Nodal points\\
+
+\end{abbreviations}
+\end{prefatory}
+%%%% End of 'prefatory' section
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%%  '\doublespacing' should only be used for review/draft
+%\doublespacing  %% comment this command for the final submission
+%%
+%%
+%%%%%%%%
+
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+
+%\chapter{Title of chapter one}
+%%
+%%
+%%%%%%%%
+%\chapter{Title of chapter two}
+%%
+%%
+%%%%%%
+\bibliographystyle{abbrv}
+%\bibliography{mybibliography}  % `mybibliography.bib' has the bibliography database
+%%
+\bibliographystyle{apsrev4-1}
+\bibliography{refs.bib}
+%%%%%%%%%%
+%\appendix%
+%\chapter{Title of appendix A}
+%%
+%%%%%%%%%%
+%\chapter{Title of appendix B}
+%%
+\end{document}
